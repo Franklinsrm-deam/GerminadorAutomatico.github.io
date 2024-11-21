@@ -2,7 +2,7 @@
 
   .change_text {
     cursor: pointer;
-    transition: font-size 0.3s ease; /
+    transition: font-size 0.5s ease; /
 }
 
 .change_text:hover {
