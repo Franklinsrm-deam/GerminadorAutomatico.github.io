@@ -1,0 +1,11 @@
+
+
+  .change_text {
+    cursor: pointer;
+    transition: font-size 0.3s ease; /
+}
+
+.change_text:hover {
+font-size: 20px;  
+    color: rgb(25, 63, 13);
+}
