@@ -1,0 +1,30 @@
+body{
+    background-color: black;
+}
+.title{
+    text-align: center;
+    align-items: center;
+    color: bisque;
+}
+.title h1{
+    font-size: 50px;
+}
+.tex{
+    text-align: center;
+    align-items: center;
+    color: bisque;
+}
+
+.tex p{
+    font-size: 40px;
+}
+.imagen{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    animation: rotar 4s;
+}
+@keyframes rotar{
+    0%{transform: rotateY(360deg);}
+    100%{transform: rotateY(0deg);}
+}
