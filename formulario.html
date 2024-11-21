@@ -6,11 +6,65 @@
     <title>Formulario</title>
     <link rel="stylesheet" href="css/formulario.css">
     <script>
-        // Función para capitalizar cada palabra en el campo de texto
         function cPalabras(input) {
             input.value = input.value.replace(/\b\w+/g, function(palabra) {
                 return palabra.charAt(0).toUpperCase() + palabra.slice(1).toLowerCase();
             });
+        }
+
+        function validarFormulario() {
+            let valid = true;
+
+            // Validar nombre
+            let nombre = document.getElementById('nombre');
+            if (!nombre.checkValidity()) {
+                document.getElementById('error-nombre').style.display = 'inline';
+                valid = false;
+            } else {
+                document.getElementById('error-nombre').style.display = 'none';
+            }
+
+            // Validar correo
+            let correo = document.getElementById('correo');
+            if (!correo.checkValidity()) {
+                document.getElementById('error-correo').style.display = 'inline';
+                valid = false;
+            } else {
+                document.getElementById('error-correo').style.display = 'none';
+            }
+
+            // Validar teléfono
+            let telefono = document.getElementById('telefono');
+            if (!telefono.checkValidity()) {
+                document.getElementById('error-telefono').style.display = 'inline';
+                valid = false;
+            } else {
+                document.getElementById('error-telefono').style.display = 'none';
+            }
+
+            // Validar dirección
+            let direccion = document.getElementById('direccion');
+            if (!direccion.checkValidity()) {
+                document.getElementById('error-direccion').style.display = 'inline';
+                valid = false;
+            } else {
+                document.getElementById('error-direccion').style.display = 'none';
+            }
+
+            // Validar fecha
+            let fecha = document.getElementById('fecha');
+            if (!fecha.checkValidity()) {
+                document.getElementById('error-fecha').style.display = 'inline';
+                valid = false;
+            } else {
+                document.getElementById('error-fecha').style.display = 'none';
+            }
+
+            if (valid) {
+                window.location.href = 'https://franklinsrm-deam.github.io/GerminadorAutomatico.github.io/construccion.html';
+            } else {
+                alert('Por favor, complete todos los campos requeridos.');
+            }
         }
     </script>
 </head>
@@ -23,7 +77,7 @@
     </div>
 
     <div class="container-form">
-        <form action="sub-paginas/pagina-en-construccion.html" method="get">
+        <form id="miformulario" action="sub-paginas/pagina-en-construccion.html" method="get">
             <h1 style="text-align: center; margin-bottom: 35px;">Formulario</h1>
             <br>
             <label for="nombre">Nombre Completo:</label>
@@ -32,39 +86,32 @@
                 title="Debe contener al menos 2 palabras, solo letras, y cada palabra debe iniciar con mayúscula." 
                 placeholder="Juan Pérez Muños" 
                 onblur="cPalabras(this)">
+            <span id="error-nombre" class="error" style="display:none;">Este campo es obligatorio y debe contener al menos 2 palabras, solo letras, y cada palabra debe iniciar con mayúscula.</span>
 
             <label for="correo">Correo Electrónico:</label>
             <input type="email" id="correo" name="correo" required placeholder="ejemplo@dominio.com">
+            <span id="error-correo" class="error" style="display:none;">Por favor, ingresa un correo válido.</span>
 
             <label for="telefono">Teléfono:</label>
             <input type="tel" id="telefono" name="telefono" required 
                 pattern="^\d{10}$" 
                 title="El teléfono debe contener 10 dígitos." 
                 placeholder="1234567890">
+            <span id="error-telefono" class="error" style="display:none;">El teléfono debe contener 10 dígitos.</span>
 
             <label for="direccion">Dirección:</label>
             <input type="text" id="direccion" name="direccion" 
                 title="Debe contener al menos 2 palabras, al menos un número de dos dígitos, y cada palabra debe iniciar con mayúscula." 
                 placeholder="Ciudad, Calle, Número" 
                 onblur="cPalabras(this)">
+            <span id="error-direccion" class="error" style="display:none;">La dirección debe seguir el formato indicado.</span>
 
             <label for="fecha">Fecha de Nacimiento:</label>
             <input type="date" id="fecha" name="fecha" required>
+            <span id="error-fecha" class="error" style="display:none;">La fecha es obligatoria.</span>
 
-            <a class=buttom href="#" onclick="validarFormulario()"> Enviar </a>
-
-<script>
-  function validarFormulario() {
-    if (document.getElementById(nombre).checkValidity()) {
-      window.location.href = 'https://franklinsrm-deam.github.io/GerminadorAutomatico.github.io/construccion.html';
-    } else {
-      alert('Por favor, complete todos los campos requeridos.');
-    }
-  }
-</script>
+            <a class="buttom" href="#" onclick="validarFormulario()">Enviar</a>
         </form>
     </div>    
 </body>
 </html>
-
-
