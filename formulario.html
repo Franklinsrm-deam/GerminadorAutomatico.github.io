@@ -51,7 +51,17 @@
             <label for="fecha">Fecha de Nacimiento:</label>
             <input type="date" id="fecha" name="fecha" required>
 
-            <a class=buttom type="submit" href=https://franklinsrm-deam.github.io/GerminadorAutomatico.github.io/construccion.html> Enviar </a>
+            <a class=buttom href="#" onclick="validarFormulario()"> Enviar </a>
+
+<script>
+  function validarFormulario() {
+    if (document.getElementById(nombre).checkValidity()) {
+      window.location.href = 'https://franklinsrm-deam.github.io/GerminadorAutomatico.github.io/construccion.html';
+    } else {
+      alert('Por favor, complete todos los campos requeridos.');
+    }
+  }
+</script>
         </form>
     </div>    
 </body>
