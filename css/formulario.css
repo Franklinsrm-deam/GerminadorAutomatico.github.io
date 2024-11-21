@@ -1,9 +1,82 @@
-<style> 
-  Body {
-    Background: lightgray;
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
   }
-
-#Container {
+  
+  body {
+    background-image: url('../imagenes/fondo-seguridad-alerta-precaucion-vector-espacio-blanco_1017-45794.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+  
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+  
+  body::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+  }
+  
+*{
+    margin: 0;
+    padding: 0;
 }
-.article{
+
+.container-form{
+    max-width: 500px;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    margin: auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+label {
+    text-align: center;
+    padding: 5px;
+    color: black;
+    border-radius: 5px;
+    margin: 2px;
+}
+
+input::placeholder {
+    color: gray
+}
+
+input {
+    border: transparent;
+    padding: 8px;
+    box-shadow: 0 0 10px gray;
+    border-radius: 8px;
+    color: gray
+}
+
+.buttom {
+    text-align: center;
+    background-color: green;
+    width: 70px;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    transition: 0.5s;
+}
+
+.buttom:hover {
+    color: black;
+    background-color: transparent;
+    box-shadow: 9px 9px 0 green;
 }
